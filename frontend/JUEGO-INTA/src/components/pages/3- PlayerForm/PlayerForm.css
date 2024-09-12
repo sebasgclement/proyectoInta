@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+form {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: #bd612d;
+    justify-content: center;
+    text-align: center;
+    padding: 15px 15px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 0 25px green;
+    border: 2px solid yellow;
+    border-radius: 8px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.form_subtitle {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 2rem;
+    padding: 10px;
+    color: black;
+    font-family: 'Fredoka One', sans-serif;
+}
+
+.form_input {
+    padding: 10px 0;
+}
+
+input, textarea, select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid yellow;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background: transparent;
+    border-radius: 4px;
+    color: #eee;
+    margin-top: 5px;
+}
+
+input::placeholder {
+    color: black;
+}
+
+label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    line-height: 1.5;
+    color: black;
+    font-family: 'Fredoka One', sans-serif;
+}
+
+.fieldset_form1 {
+    border: 1px solid yellow;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.fieldset_legends {
+    padding: 0 10px;
+    color: yellow;
+}
+
+button {
+    font-family: 'Fredoka One', sans-serif;
+    --button_radius: 0.75em;
+    --button_color: #D4E157;
+    --button_outline_color: #388E3C;
+    font-size: 17px;
+    border: none;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color);
+    margin-top: 2%;
+}
+
+.button_group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button_top {
+    display: block;
+    box-sizing: border-box;
+    border: 2px solid var(--button_outline_color);
+    border-radius: var(--button_radius);
+    padding: 0.75em 1.5em;
+    background: var(--button_color);
+    color: var(--button_outline_color);
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
+}
+
+#member {
+    font-size: 12px;
+    padding: 0.9em 1.4em;
+}
+
+button:hover .button_top {
+    transform: translateY(-0.33em);
+}
+
+button:active .button_top {
+    transform: translateY(0);
+}
+
+/*RESPONSIVIDAD*/
+@media (min-width: 768px) {
+    form {
+        padding: 20px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+        padding: 14px 9px;
+    }
+
+    .form_subtitle {
+        font-size: 1.5rem;
+    }
+
+    .button_group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 8px 13px;
+    }
+
+    input, textarea, select {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form_subtitle {
+        font-size: 1.2rem;
+    }
+
+    .button_group {
+        gap: 5px;
+    }
+
+    form {
+        padding: 9px;
+    }
+
+    button {
+        padding: 8px 12px;
+    }
+
+    input, textarea, select {
+        font-size: 0.9rem;
+    }
+}

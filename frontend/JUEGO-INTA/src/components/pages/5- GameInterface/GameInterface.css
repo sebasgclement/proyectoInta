@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+/* Estilos generales */
+body {
+    font-family: 'Fredoka One', sans-serif;
+}
+
+.interface-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Para distribuir los elementos verticalmente */
+    align-items: center;
+    padding: 1rem; /* Asegúrate de tener un relleno pequeño */
+    box-sizing: border-box;
+}
+
+/* Estilos del encabezado */
+.header {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 1px;
+    display: flex;
+    background-color: transparent;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    margin: auto;
+    padding: 2px;
+    font-size: 1.5rem;
+}
+
+/* Contenedor de imagen */
+.image-container {
+    margin: auto;
+    border: 2px solid blue;
+    width: 55%;
+    height: auto; /* Cambiado para mantener la proporción de la imagen */
+    max-height: 40%; /* Limita la altura máxima */
+    padding: 0; /* Sin padding para evitar desbordamiento */
+    overflow: hidden; /* Oculta cualquier contenido que desborde */
+    display: flex;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+}
+
+.image-container img {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Contenedor de interfaz inferior */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%; /* Ocupa toda la altura disponible */
+    padding: 0; /* Quita márgenes innecesarios */
+    margin: 0;
+}
+
+/* Contenedor de pregunta + barra  #10c10b*/
+.question-container {
+    border: 2px solid black;
+    background: linear-gradient(to right, #FDFC47, #168e04);
+    padding: 1rem;
+    width: 90%;
+    height: auto;
+    text-align: center;
+    margin: auto;
+    margin-top: 1%;
+    box-shadow: 0 2px 5px black;
+    margin-bottom: 0.77rem;
+    border-radius: 8px;
+}
+
+.question-number {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.question-text {
+    font-size: 1.27rem;
+}
+
+.timer-text {
+    margin-top: 1%;
+    font-size: 1.25rem;
+}
+
+/* Estilos para el efecto de opacidad */
+.overlay-active {
+    position: relative;
+    opacity: 0.4; /* Cambia esto para ajustar la opacidad */
+    transition: opacity 3s ease-in-out;
+}
+
+@keyframes p6 {
+    100% {
+        inset: 0;
+    }
+}
+
+.time-up-message {
+    margin-top: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: red;
+    display: none;
+}
+
+/* Contenedor de las respuestas */
+.answers-container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    height: 60%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.answer-btn {
+    font-family: 'Fredoka One';
+    border: none;
+    box-sizing: border-box;
+    box-shadow: 0 5px 5px black;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.answer-btn:hover {
+    border: 3px solid #41ff00;
+    box-sizing: border-box;
+    box-shadow: 0 8px 15px #167200;
+}
+
+.o1 {
+    background-color: red;
+}
+
+.o2 {
+    background-color: blue;
+}
+
+.o3 {
+    background-color: yellow;
+}
+
+.o4 {
+    background-color: #de00ff;
+}
+
+/* Estilo para el botón cuando la respuesta es correcta */
+.correct-answer {
+    position: relative;
+    overflow: hidden;
+    transition: 2.5s linear;
+    z-index: 1;
+}
+
+.correct-answer:before,
+.correct-answer:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: transparent;
+    transition: 2.5s linear;
+}
+
+.correct-answer:before {
+    top: 0;
+    left: 0;
+    border-top: 4px solid #41ff00;
+    border-right: 4px solid #41ff00;
+    transform: translateX(-100%);
+    box-sizing: border-box;
+}
+
+.correct-answer:after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 4px solid #41ff00;
+    border-left: 4px solid #41ff00;
+    transform: translateX(100%);
+    box-sizing: border-box;
+}
+
+.correct-answer:hover:before,
+.correct-answer:hover:after {
+    transform: translateX(0);
+    transition: 2.5s transform linear, 2.5s height linear;
+}
+
+.incorrect-answer {
+    position: relative;
+    overflow: hidden;
+    transition: 2.5s linear;
+    z-index: 1;
+}
+
+.incorrect-answer:before,
+.incorrect-answer:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: transparent;
+    transition: 2.5s linear;
+}
+
+.incorrect-answer:before {
+    top: 0;
+    left: 0;
+    border-top: 4px solid #ff0000; /* Rojo */
+    border-right: 4px solid #ff0000;
+    transform: translateX(-100%);
+    box-sizing: border-box;
+}
+
+.incorrect-answer:after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 4px solid #ff0000; /* Rojo */
+    border-left: 4px solid #ff0000;
+    transform: translateX(100%);
+    box-sizing: border-box;
+}
+
+.incorrect-answer:hover:before,
+.incorrect-answer:hover:after {
+    transform: translateX(0);
+    transition: 2.5s transform linear, 2.5s height linear;
+}
+
+/* HACIENDO RESPONSIVE EL JUEGO */
+@media (min-width: 600px) and (max-width: 899px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    .question-number {
+        font-size: 2.5rem;
+    }
+
+    .question-text {
+        font-size: 1.5rem;
+    }
+
+    .answer-btn {
+        font-size: 1.5rem;
+        padding: 1.25rem 1.5rem; /* Ajusta el padding para esta resolución */
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+    .header h1 {
+        font-size: 3rem;
+    }
+
+    .question-number {
+        font-size: 3rem;
+    }
+
+    .question-text {
+        font-size: 1.75rem;
+    }
+
+    .answer-btn {
+        font-size: 1.75rem;
+        padding: 1.25rem 1.75rem; /* Ajusta el padding para esta resolución */
+    }
+}
+
+@media (min-width: 1200px) {
+    .header h1 {
+        font-size: 3.5rem;
+    }
+
+    .question-number {
+        font-size: 3.5rem;
+    }
+
+    .question-text {
+        font-size: 2rem;
+    }
+
+    .answer-btn {
+        font-size: 2rem;
+        padding: 1.5rem 2rem;
+    }
+}
+
+@media (max-width: 1366px) {
+    .image-container {
+        width: 50%;
+        height: auto; /* Mantener proporción */
+        max-height: 40%; /* Limitar altura */
+    }
+
+    .question-text {
+        font-size: 1.2rem;
+    }
+
+    .answer-btn {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+}
+
+/* Ajustes para tablets y celulares (pantallas de menos de 768px) */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.2rem;
+    }
+    .image-container {
+        width: 80%; /* Aumentar el ancho en pantallas pequeñas */
+        max-height: 30%; /* Limitar altura en pantallas pequeñas */
+    }
+}

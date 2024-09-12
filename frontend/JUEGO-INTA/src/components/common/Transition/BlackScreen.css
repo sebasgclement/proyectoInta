@@ -1,0 +1,19 @@
+.black-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 1s ease;
+  z-index: 1000; /* Asegura que la pantalla negra esté por encima de todo */
+}
+
+.black-screen.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+  

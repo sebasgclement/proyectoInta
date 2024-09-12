@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body {
+    font-family: 'Fredoka One', sans-serif;
+}
+
+.container {
+    text-align: center;
+    padding: 1rem;
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.main-title {
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 1%;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 1.5rem;
+    margin-top: 5%;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/*BOTON FACHERO*/
+.c-button {
+    width: 80%;
+    font-family: 'Fredoka One', sans-serif;
+    margin: auto;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 0.9em 1.6em;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.c-button--gooey {
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 4px solid green;
+    border-radius: 10px;
+    position: relative;
+    transition: all 700ms ease;
+}
+
+.c-button--gooey .c-button__blobs {
+    height: 100%;
+    filter: url(#goo);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: -3px;
+    right: -1px;
+    z-index: -1;
+}
+
+.c-button--gooey .c-button__blobs div {
+    background: linear-gradient(to right, #D4E157, #388E3C);
+    width: 35%;
+    height: 100%;
+    border-radius: 95%;
+    position: absolute;
+    transform: scale(1.4) translateY(125%) translateZ(0);
+    transition: all 700ms ease;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(1) {
+    left: -5%;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(2) {
+    left: 30%;
+    transition-delay: 60ms;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(3) {
+    left: 66%;
+    transition-delay: 25ms;
+}
+
+.c-button--gooey:hover {
+    color: #fff;
+}
+
+.c-button--gooey:hover .c-button__blobs div {
+    transform: scale(1.4) translateY(0) translateZ(0);
+}
+
+/* Colores para cada boton */
+.cultivos { background-color: #86e014; }
+.labranzas { background-color: #ff6400; }
+.vacas {background: linear-gradient(to right,white, black);}
+.microorganismos{ background-color: #00bcd4;}
+.origen { background-color:  #fff811;}
+
+/* Añade esto en QuestionCategory.css */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* Media Queries */
+@media (min-width: 640px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    .subtitle {
+        font-size: 2rem;
+    }
+    .btn {
+        font-size: 1.25rem;
+        padding: 0.75rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .btn {
+        width: calc(50% - 0.5rem);
+    }
+}

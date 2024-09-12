@@ -1,0 +1,81 @@
+body {
+    flex-direction: column;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 10%; /* Reduce el margen superior */
+    font-family: 'Fredoka One', sans-serif;
+    font-size: calc(1.5rem + 1vw); /* Tamaño de fuente relativo al viewport */
+}
+
+.imagenes-empresas {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Distribuye las imágenes verticalmente */
+    align-items: center; /* Centra las imágenes horizontalmente */
+    width: 80%; /* Ajusta el ancho del contenedor a un porcentaje del viewport */
+    max-width: 1200px; /* Limita el ancho máximo del contenedor */
+    height: auto; /* Ajusta la altura automáticamente */
+    margin: 2rem auto; /* Márgenes verticales y horizontales automáticos */
+}
+
+.empresas {
+    width: 80%; /* Ajusta el ancho de las imágenes a un porcentaje del contenedor */
+    max-width: 200px; /* Limita el ancho máximo de cada imagen */
+    height: auto; /* Ajusta la altura automáticamente */
+    margin: 1rem 0; /* Márgenes verticales */
+    border: 5px solid transparent;
+    border-radius: 30px;
+}
+
+.inta {
+    box-shadow: 4px 4px 3px #dc504d
+
+    ; /* x, y, blur and color */
+    border: transparent;
+}
+
+.muni {
+    border: transparent;
+    box-shadow: 4px 4px 3px #ffdd31 ;
+}
+
+.unraf {
+    border: transparent;
+    box-shadow: 4px 4px 8px #1ab8e3;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    h2 {
+        font-size: calc(1.25rem + 1vw); /* Tamaño de fuente más pequeño en pantallas pequeñas */
+        margin-top: 10%; /* Mayor margen superior en pantallas pequeñas */
+    }
+
+    .imagenes-empresas {
+        width: 90%; /* Aumenta el ancho del contenedor en pantallas pequeñas */
+    }
+
+    .empresas {
+        width: 60%; /* Reduce el ancho de las imágenes en pantallas pequeñas */
+        max-width: 150px; /* Reduce el ancho máximo de las imágenes */
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: calc(1rem + 2vw); /* Tamaño de fuente aún más pequeño en pantallas muy pequeñas */
+        margin-top: 15%; /* Mayor margen superior en pantallas muy pequeñas */
+    }
+
+    .imagenes-empresas {
+        width: 100%; /* Ancho completo en pantallas muy pequeñas */
+    }
+
+    .empresas {
+        width: 80%; /* Ajusta el ancho de las imágenes a un porcentaje del contenedor */
+        max-width: 120px; /* Reduce el ancho máximo de las imágenes */
+    }
+}
+

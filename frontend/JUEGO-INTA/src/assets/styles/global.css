@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(to right, #D4E157, #388E3C);
+    align-items: center;
+}
